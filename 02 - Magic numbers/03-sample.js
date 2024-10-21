@@ -1,5 +1,12 @@
+
+
+
+const bandeira = 15
+
+
+
 function calcularFrete(distancia) {
-    return distancia * 10;
+    return distancia * bandeira;
 }
 
 const frete = calcularFrete(50);

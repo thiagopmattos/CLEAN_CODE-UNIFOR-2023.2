@@ -1,24 +1,52 @@
+
+const bonusGerente = 1000
+const bonusSurpevisor = 500
+const bonusNormal = 200
+
+const imposto = 300
+
+const superSalario  =10000
+
+const impostoRenda = 0.27
+
+const medioSalario = 3000
+
+const imposto2 = 0.18
+
+const imposto3 = 0.11
+
+
+
+
+
+
+
+
+
+
+
+
 function calcularSalarioFuncionario(horasTrabalhadas, valorHora, cargo) {
     const salarioBase = horasTrabalhadas * valorHora;
 
     let salarioComBonus;
     if (cargo === 'gerente') {
-        salarioComBonus = salarioBase + 1000;
+        salarioComBonus = salarioBase + bonusGerente;
     } else if (cargo === 'supervisor') {
-        salarioComBonus = salarioBase + 500;
+        salarioComBonus = salarioBase + bonusSurpevisor;
     } else {
-        salarioComBonus = salarioBase + 200;
+        salarioComBonus = salarioBase + bonusNormal;
     }
 
-    const salarioComDesconto = salarioComBonus - 300;
+    const salarioComDesconto = salarioComBonus - imposto;
 
     let salarioFinal;
-    if (salarioComDesconto > 5000) {
-        salarioFinal = salarioComDesconto - (salarioComDesconto * 0.27);
-    } else if (salarioComDesconto > 3000) {
-        salarioFinal = salarioComDesconto - (salarioComDesconto * 0.18);
+    if (salarioComDesconto > superSalario) {
+        salarioFinal = salarioComDesconto - (salarioComDesconto * impostoRenda);
+    } else if (salarioComDesconto > medioSalario) {
+        salarioFinal = salarioComDesconto - (salarioComDesconto * imposto2);
     } else {
-        salarioFinal = salarioComDesconto - (salarioComDesconto * 0.11);
+        salarioFinal = salarioComDesconto - (salarioComDesconto * imposto3);
     }
 
     return salarioFinal;
