@@ -5,3 +5,4 @@ The topics are:
 
 - Significative names
 - Magic numbers
+- Functions with single responsability
